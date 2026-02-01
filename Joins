@@ -1,0 +1,9 @@
+-- JOINS
+-- a. List the top 5 countries (by order count) that Classic Models ships to. (Use the Customers and Orders tables)
+
+
+SELECT country, COUNT(*) AS totalOrders
+FROM customers c
+INNER JOIN orders o
+ON c.customerNumber = o.customerNumber
+GROUP BY c.country order by Totalorders desc;
