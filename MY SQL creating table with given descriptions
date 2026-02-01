@@ -1,0 +1,20 @@
+-- CONSTRAINTS: Primary, key, foreign key, Unique, check, not null, default
+
+-- Create a new database named and Customers_Orders and add the following tables as per the description
+
+-- a.	Create a table named Customers to store customer information. Include the following columns:
+
+-- customer_id: This should be an integer set as the PRIMARY KEY and AUTO_INCREMENT.
+-- first_name: This should be a VARCHAR(50) to store the customer's first name.
+-- last_name: This should be a VARCHAR(50) to store the customer's last name.
+-- email: This should be a VARCHAR(255) set as UNIQUE to ensure no duplicate email addresses exist.
+-- phone_number: This can be a VARCHAR(20) to allow for different phone number formats.
+
+-- Add a NOT NULL constraint to the first_name and last_name columns to ensure they always have a value.
+
+
+Create Table 
+Customers(Customer_ID Int Primary Key auto_increment, 
+First_name Varchar(50) Not null, 
+Last_Name Varchar(50) Not null, 
+EMail varchar(255) Unique, Phone_Number Varchar(20));
