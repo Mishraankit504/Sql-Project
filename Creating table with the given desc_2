@@ -1,0 +1,14 @@
+-- Create a table named Orders to store information about customer orders. Include the following columns:
+
+--     	order_id: This should be an integer set as the PRIMARY KEY and AUTO_INCREMENT.
+-- customer_id: This should be an integer referencing the customer_id in the Customers table  (FOREIGN KEY).
+-- order_date: This should be a DATE data type to store the order date.
+-- total_amount: This should be a DECIMAL(10,2) to store the total order amount.
+--      	
+-- Constraints:
+-- a)	Set a FOREIGN KEY constraint on customer_id to reference the Customers table.
+-- b)	Add a CHECK constraint to ensure the total_amount is always a positive value.
+
+Create Table Orders(Order_id INt Primary Key auto_increment, Customer_id Int,
+Order_date Date, Total_Order decimal(10,2), constraint chck_totl_val check(Total_Order>0), 
+constraint CUST_ID_Frn_ky foreign key(Customer_ID) References customers(customer_ID));
