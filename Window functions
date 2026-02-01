@@ -1,0 +1,19 @@
+-- Window functions - Rank, dense_rank, lead and lag
+
+-- a) Using customers and orders tables, rank the customers based on their order frequency
+
+-- b) Calculate year wise, month name wise count of orders and year over year (YoY) percentage change. Format the YoY values in no decimals and show in % sign.
+-- Table: Orders
+
+
+SELECT
+    c.customerNumber,
+    c.customerName,
+    COUNT(o.orderNumber) AS total_orders,
+    RANK() OVER (ORDER BY COUNT(o.orderNumber) DESC) AS order_rank
+FROM customers c
+LEFT JOIN orders o
+    ON c.customerNumber = o.customerNumber
+GROUP BY
+    c.customerNumber,
+    c.customerName;
