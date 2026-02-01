@@ -1,0 +1,16 @@
+-- DDL Commands: Create, Alter, Rename
+-- a. Create table facility. Add the below fields into it.
+-- ●	Facility_ID
+-- ●	Name
+-- ●	State
+-- ●	Country
+
+-- i) Alter the table by adding the primary key and auto increment to Facility_ID column.
+-- ii) Add a new column city after name with data type as varchar which should not accept any null values.
+
+Create Table Facility(Facility_ID Int, Name Varchar(100), 
+City Varchar(100), State Varchar(100), Country Varchar(100));
+
+Alter Table Facility Modify Facility_ID INT Primary Key auto_increment;
+Desc Facility;
+
