@@ -1,0 +1,15 @@
+-- SELF JOIN
+-- a. Create a table project with below fields.
+
+
+-- ●	EmployeeID : integer set as the PRIMARY KEY and AUTO_INCREMENT.
+-- ●	FullName: varchar(50) with no null values
+-- ●	Gender : Values should be only ‘Male’  or ‘Female’
+-- ●	ManagerID: integer 
+-- Add some data into it.
+
+select e.Full_name as employee,
+m.Full_name as manager
+from project e left join project M on e.Manager_ID=m.employeeID;
+
+
